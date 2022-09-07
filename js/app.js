@@ -1,4 +1,5 @@
-
+// vars
+const btnEnviar = document.querySelector('#enviar')
 // event listeners
 eventListeners();
 
