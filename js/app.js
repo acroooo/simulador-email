@@ -1,5 +1,11 @@
 // vars
 const btnEnviar = document.querySelector('#enviar')
+
+// variables para campos
+const email = document.querySelector('#email');
+const asunto = document.querySelector('#asunto');
+const mensaje = document.querySelector('#mensaje');
+
 // event listeners
 eventListeners();
 
