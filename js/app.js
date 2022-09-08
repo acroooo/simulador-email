@@ -38,9 +38,11 @@ function validarFormulario(e) {
 
     // validar email
     if (e.target.type === 'email') {
-        const resultado = e.target.value.indexOf('@');
-        if (resultado < 0) {
-            verError('Por favor, ingrese un email válido');
+        const expresionRegular = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (expresionRegular.test(e.target.value)) {
+            console.log('Email valido');
+        } else {
+            verError('Email no valido');
         }
 
     
