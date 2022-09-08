@@ -1,7 +1,6 @@
 #### CURSO: JavaScript Moderno Guía Definitiva Construye +15 Proyectos
 
-### Proyecto 2 - Simulador de envío de email.
-
+### Proyecto 2 - Simulador de envío de email
 
 
 Link: https://aquamarine-cactus-1c2a46.netlify.app/
