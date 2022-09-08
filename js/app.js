@@ -13,3 +13,9 @@ function eventListeners() {
     // // reset the form
     // document.querySelector('#resetBtn').addEventListener('click', resetForm);
 }
+
+// Funciones
+function initApp(){
+    btnEnviar.disabled = true;
+    btnEnviar.classList.add('cursor-not-allowed', 'opacity-50');
+}
