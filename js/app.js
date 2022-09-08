@@ -30,8 +30,15 @@ function validarFormulario(e) {
 
     // validar si hay texto
     if (e.target.value.length > 0) {
-        console.log('Hay texto')
+        // eliminar los errores
+        const error = document.querySelector('p.error');
+        if (error) {
+            error.remove();
+        }
+        e.target.classList.remove('border', 'border-red-500');
+        e.target.classList.add('border', 'border-green-500', 'border-solid',);
     } else {
+        e.target.classList.remove('border', 'border-green-500');
         e.target.classList.add('border', 'border-red-500', 'border-solid',);
         verError('Todos los campos son obligatorios');
     }
@@ -40,8 +47,15 @@ function validarFormulario(e) {
     if (e.target.type === 'email') {
         const expresionRegular = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (expresionRegular.test(e.target.value)) {
-            console.log('Email valido');
+            const error = document.querySelector('p.error');
+            if (error) {
+                error.remove();
+            }
+            e.target.classList.remove('border', 'border-red-500');
+            e.target.classList.add('border', 'border-green-500', 'border-solid',);
         } else {
+            e.target.classList.remove('border', 'border-green-500');
+            e.target.classList.add('border', 'border-red-500', 'border-solid',);
             verError('Email no valido');
         }
 
