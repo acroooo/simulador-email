@@ -19,6 +19,9 @@ function eventListeners() {
     email.addEventListener('blur', validarFormulario);
     asunto.addEventListener('blur', validarFormulario);
     mensaje.addEventListener('blur', validarFormulario);
+
+    // enviar email
+    formulario.addEventListener('submit', enviarEmail);
 }
 // Funciones
 function initApp(){
@@ -60,6 +63,15 @@ function validarFormulario(e) {
         }
 
     
+    }
+
+    // pasar validacion
+    if (email.value !== '' && asunto.value !== '' && mensaje.value !== '') {
+        btnEnviar.disabled = false;
+        btnEnviar.classList.remove('cursor-not-allowed', 'opacity-50');
+    } else {
+        btnEnviar.disabled = true;
+        btnEnviar.classList.add('cursor-not-allowed', 'opacity-50');
     }
 }
 
