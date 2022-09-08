@@ -88,6 +88,39 @@ function verError(mensaje) {
     }
 }
 
-// function campoValidado(campo) {
-//     campo.classList.add('border', 'border-green-500', 'border-solid',);
-// }
+// enviar email
+function enviarEmail(e) {
+    e.preventDefault();
+    // spinner
+    const spinner = document.querySelector('#spinner');
+    spinner.style.display = 'flex';
+
+    // despues de 3 segundos ocultar el spinner
+    setTimeout(() => {
+        spinner.style.display = 'none';
+
+        // mensaje enviado
+        const parrafoNuevo = document.createElement('p');
+        parrafoNuevo.textContent = 'El mensaje se envio correctamente';
+        parrafoNuevo.classList.add('text-center', 'my-10', 'p-2', 'bg-green-500', 'text-white', 'font-bold', 'uppercase');
+
+        // inserta el parrafo antes del spinner
+        formulario.insertBefore(parrafoNuevo, document.querySelector('.mb-10'))
+    
+        // resetear el formulario
+        setTimeout(() => {
+            parrafoNuevo.remove(); // resetear el mensaje de exito
+            resetearFormulario();
+        }
+        , 5000);
+    
+    }, 3000);
+
+
+}
+
+// resetear formulario
+function resetearFormulario() {
+    formulario.reset();
+    initApp();
+}
